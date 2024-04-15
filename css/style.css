@@ -1,0 +1,232 @@
+/*--------------------------------------------------------------- 
+
+    CSS Index
+    ====================
+
+    1. Basic Styles
+    2. Top Navbar Area
+    3. Navbar Links Hover Underline
+    4. Hero Section
+    5. Our Services And Our Trainers Sections
+    6. Reviews Section
+    7. Footer Area
+    8. hidden / show classes
+    9. Responsiveness
+
+---------------------------------------------------------------*/
+
+/* Google Fonts - Bebas Neue and Poppins fonts import */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/*====================== 
+* 1. Basic Styles
+======================*/
+
+:root {
+    --primary-color: #7E30E1;
+    --second-color: #cc1792;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+h1,
+h2,
+.reviews-section h5 {
+    font-family: "Bebas Neue", sans-serif;
+}
+
+body h2 {
+    font-size: 5rem;
+}
+
+.btn.btn-indigo {
+    color: #ffffff;
+    background-color: var(--primary-color);
+}
+
+.btn.btn-indigo:hover {
+    color: #ffffff;
+    background-color: rgb(113, 20, 235);
+}
+
+.text-indigo {
+    color: var(--primary-color);
+}
+
+.text-pink {
+    color: var(--second-color);
+}
+
+/*====================== 
+* 2. Top Navbar Area
+======================*/
+
+.navbar {
+    background-color: var(--primary-color);
+}
+
+/*====================== 
+* 3. Navbar Links Hover Underline
+======================*/
+
+.navbar .nav-link {
+    position: relative;
+    color: rgba(255, 255, 255, 0.55);
+    text-decoration: none;
+}
+
+.navbar .nav-link:hover {
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.navbar .nav-link::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.55);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.navbar .nav-link:hover::before {
+    transform: scaleX(1);
+}
+
+.navbar .navbar-toggler:focus {
+    box-shadow: none;
+}
+
+.contact-btn {
+    white-space: nowrap;
+}
+
+/*====================== 
+* 4. Hero Section
+======================*/
+
+.hero-section {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9)), url(../images/header-img.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-section h1 {
+    font-size: 6rem;
+}
+
+.hero-section p:first-of-type {
+    font-size: 1.5rem;
+}
+
+/*====================== 
+* 5. Our Services And Our Trainers Sections
+======================*/
+
+.services-section h5 {
+    color: var(--primary-color);
+}
+
+.services-section .card,
+.our-trainers .card,
+.services-section .card:hover,
+.our-trainers .card:hover {
+    transition: all 0.5s ease;
+}
+
+.services-section .card:hover,
+.our-trainers .card:hover {
+    transform: scale(1.03);
+}
+
+.our-trainers .card:hover .card-img-overlay {
+    background: linear-gradient( rgba(102, 16, 242, 0.2), rgba(102, 16, 242, 0.7));
+}
+
+.our-trainers .card-img-overlay {
+    background: linear-gradient( rgba(102, 16, 242, 0), rgba(102, 16, 242, 0.5));
+}
+
+/*====================== 
+* 6. Reviews Section
+======================*/
+
+.reviews-section h5 {
+    color: var(--primary-color);
+}
+
+/*====================== 
+* 7. Footer Area
+======================*/
+
+footer {
+    background-color: var(--primary-color);
+}
+
+.social-icons a {
+    color: #ffffff;
+}
+
+.social-icons i {
+    transition: all 0.5s ease;
+}
+
+.social-icons i:hover {
+    transform: scale(1.2);
+    transition: all 0.5s ease;
+}
+
+/*====================== 
+* 8. hidden / show classes
+======================*/
+
+.hidden {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: all 1s;
+}
+
+.show {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/*====================== 
+* 9. Responsiveness
+======================*/
+
+@media screen and (max-width: 992px) {
+    .navbar .nav-link::before {
+        height: 0;
+    }
+
+    .border-left {
+        border-left: 0;
+    }
+
+    .hero-section h1 {
+        font-size: 5rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .hero-section {
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(../images/header-img.jpg);
+        background-position: left;
+    }
+
+    body h2 {
+        font-size: 4rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    body h2 {
+        font-size: 3rem;
+    }
+}
